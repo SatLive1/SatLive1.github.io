@@ -18,7 +18,7 @@
             color: #333;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             padding: 30px;
@@ -30,10 +30,29 @@
             margin-bottom: 20px;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
+            text-align: center;
+        }
+        .satellite-diagram {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .satellite-diagram img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .diagram-caption {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
         }
         h2 {
             color: #3498db;
             margin: 25px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
         }
         h3 {
             color: #2980b9;
@@ -64,12 +83,21 @@
             text-align: center;
             color: #7f8c8d;
             font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>MEO与LEO卫星通信协同案例及相关技术</h1>
+
+        <!-- 卫星通信系统示意图 -->
+        <div class="satellite-diagram">
+            < img src="satlive.png" 
+                 alt="卫星通信系统示意图（包含LEO卫星、地面站及用户终端）">
+            <p class="diagram-caption">图：LEO卫星通信系统示意图（展示星间链路、地面站与各类用户终端的通信架构）</p >
+        </div>
 
         <h2>一、MEO与LEO卫星通信协同已落地成功案例</h2>
 
