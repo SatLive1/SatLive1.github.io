@@ -1,151 +1,177 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEO与LEO卫星通信协同案例及相关技术</title>
+    <title>SatLive - End-to-End Live Video Streaming over ISTNs</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", Arial, sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-        .satellite-diagram {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .satellite-diagram img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-        .diagram-caption {
-            margin-top: 10px;
-            color: #666;
-            font-size: 14px;
-            font-style: italic;
-        }
-        h2 {
-            color: #3498db;
-            margin: 25px 0 15px;
-            padding-left: 10px;
-            border-left: 4px solid #3498db;
-        }
-        h3 {
-            color: #2980b9;
-            margin: 20px 0 10px;
-        }
-        p {
-            margin: 10px 0;
-            text-align: justify;
-        }
-        ul {
-            margin: 10px 0 10px 25px;
-        }
-        li {
-            margin: 8px 0;
-        }
-        .tech-term {
-            background-color: #e3f2fd;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 14px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f5f5; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        h1 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.8rem; color: #34495e; margin: 2rem 0 1rem; }
+        h3 { font-size: 1.4rem; color: #2980b9; margin: 1.5rem 0 0.8rem; }
+        p { margin-bottom: 1rem; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .feature-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .footer { text-align: center; padding: 2rem; margin-top: 3rem; border-top: 1px solid #eee; color: #7f8c8d; }
+        a { color: #2980b9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .highlight { color: #e74c3c; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f8f9fa; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>MEO与LEO卫星通信协同案例及相关技术</h1>
+        <header>
+            <h1>SatLive</h1>
+            <p>Toward End-to-End Live Video Streaming over Integrated Satellite-Terrestrial Networks</p>
+            <p>WWW'26, April 13-17, 2026, Dubai, UAE</p>
+        </header>
 
-        <!-- 卫星通信系统示意图 -->
-        <div class="satellite-diagram">
-            < img src="111.png" 
-                 alt="卫星通信系统示意图（包含LEO卫星、地面站及用户终端）">
-            <p class="diagram-caption">图：LEO卫星通信系统示意图（展示星间链路、地面站与各类用户终端的通信架构）</p >
-        </div>
+        <section class="section">
+            <h2>About SatLive</h2>
+            <p>SatLive is a high-performance framework designed for end-to-end live video streaming over integrated satellite-terrestrial networks (ISTNs). It addresses the core challenges of ISTNs—high satellite mobility, network dynamics, and QoE requirements—through a hierarchical architecture and intelligent optimization mechanisms.</p>
+            <p>By leveraging medium earth orbit (MEO) satellites to manage low earth orbit (LEO) constellations, SatLive achieves adaptive routing and efficient data transmission, enabling seamless video streaming even in remote areas or during terrestrial network disruptions.</p>
+            <p>Source code and collected data are publicly available at: <a href="https://https://github.com/SatLive1/MEO_LEO_cluster_routing" target="_blank">GitHub</a></p>
+        </section>1
 
-        <h2>一、MEO与LEO卫星通信协同已落地成功案例</h2>
+        <section class="section">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Hierarchical Architecture</h3>
+                    <p>MEO satellites act as regional controllers for LEO constellations, providing global perspective for routing decisions while maintaining low control overhead.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>QoE-Aware Routing</h3>
+                    <p>Lightweight federated learning model (MARL) optimizes paths based on latency, packet loss, and video-specific constraints (bitrate, rebuffering).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Video-Aware Transmission</h3>
+                    <p>Frame prioritization (I/P/B frames) and time-interleaved redundancy ensure key video data is protected against network fluctuations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Dynamic Adaptability</h3>
+                    <p>Real-time path repair and cross-domain handover mechanisms adapt to LEO satellite mobility and link state changes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>High Efficiency</h3>
+                    <p>Reduces average packet delay by at least XX%, improves bitrate by XX%, and cuts rebuffering time by XX% compared to state-of-the-art solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Global Coverage</h3>
+                    <p>Supports streaming in unserved/underserved areas (remote regions, disaster zones) through LEO-MEO-Ground integrated networks.</p>
+                </div>
+            </div>
+        </section>
 
-        <h3>1. SES与SpaceX星链的MEO-LEO邮轮通信协同服务</h3>
-        <p>该案例为商业化成功典范：2023年9月，SES公司与SpaceX达成合作，集成SES的MEO卫星服务与星链的LEO卫星服务，推出邮轮行业首个MEO-LEO融合连接方案。</p >
-        <ul>
-            <li>核心优势：结合MEO卫星的稳定覆盖与LEO卫星的低时延特性，实现全天候高速安全网络连接；</li>
-            <li>性能指标：最高提供3Gbps传输速度；</li>
-            <li>解决痛点：彻底解决远洋邮轮通信不稳定、带宽不足问题，满足游客在线支付、社交媒体访问及船舶管理数据传输等需求。</li>
-        </ul>
+        <section class="section">
+            <h2>System Architecture</h2>
+            <p>SatLive adopts a three-layer management architecture to handle ISTN dynamics and video streaming requirements:</p>
+            <h3>1. MEO Satellite Layer</h3>
+            <p>Responsible for routing strategy generation and optimization. Runs a multi-agent reinforcement learning (MARL) model under the centralized training, decentralized execution (CTDE) principle.</p>
+            <h3>2. LEO Satellite Layer</h3>
+            <p>Senses link states, communicates with ground stations (GSes), and forwards data packets. Each LEO is anchored to a managing MEO satellite.</p>
+            <h3>3. Ground Station (GS) Layer</h3>
+            <p>Entry point for video streams. Selects optimal LEO access satellites based on SNR, RTT, and link duration to ensure transmission stability.</p>
+        </section>
 
-        <h3>2. SpaceLink的MEO中继网络与LEO卫星的协同技术验证</h3>
-        <p>该案例完成多项关键场景协同验证，属技术层面成功实践：SpaceLink构建的MEO中继网络计划部署4颗MEO卫星，配备光学和射频通信链路，突破传统LEO卫星仅能在地面站上空传输数据的限制。</p >
-        <ul>
-            <li>与美国陆军达成五年协同研发协议：通过仿真和模型验证，该网络可缩短传感器到作战人员的通信延迟，快速传输卫星图像等数据；</li>
-            <li>获NASA合同：在莫哈韦沙漠网关站完成与NASA近地网络的光学地面终端集成及安全数据中继演示；</li>
-            <li>入选DARPA的Space-BACN项目：参与研发商业通信星座与国防系统的交互协议，奠定军事领域MEO-LEO协同通信技术基础。</li>
-        </ul>
+        <section class="section">
+            <h2>Experimental Results</h2>
+            <p>Evaluated on StarPerf simulator with real Starlink data, SatLive outperforms baselines (Dijkstra, CMADR, StarStream) in key metrics:</p>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>SatLive Performance</th>
+                    <th>Advantage Over Baselines</th>
+                </tr>
+                <tr>
+                    <td>End-to-End Latency (9 pps)</td>
+                    <td>~570 ms</td>
+                    <td>30-40% lower than Dijkstra/CMADR</td>
+                </tr>
+                <tr>
+                    <td>Packet Loss Rate (9 pps)</td>
+                    <td>~1%</td>
+                    <td>3-6x lower than Dijkstra/CMADR</td>
+                </tr>
+                <tr>
+                    <td>Delivery Rate (9 pps)</td>
+                    <td>~80%</td>
+                    <td>10-30% higher than Dijkstra/CMADR</td>
+                </tr>
+                <tr>
+                    <td>QoE Score</td>
+                    <td>0.84</td>
+                    <td>7-12% higher than StarStream/Robust schemes</td>
+                </tr>
+                <tr>
+                    <td>Total Stall Time</td>
+                    <td>Average 5.3 s</td>
+                    <td>Minimal stalling (90% of experiments have 0 stalls)</td>
+                </tr>
+            </table>
+        </section>
 
-        <h3>3. 中国移动“卫星 + 模组”的天地协同通信实践</h3>
-        <p>国内商业化场景成功案例，结合低轨与中高轨卫星协同潜力实现落地：</p >
-        <ul>
-            <li>2024年发射的“中国移动01星”（搭载5G天地一体演进技术星载基站）可与国产LEO卫星协同，2025年推出的MU305系列卫星模组适配该卫星，地面信号弱时0.3秒内自动切换至LEO卫星链路，海洋/雪山等无地面网络区域通信稳定；</li>
-            <li>2023年中国移动香港联合垣信卫星等，在“鼓浪屿号”邮轮上成功测试国产低轨“千帆星座”，该低轨网络借助中轨卫星中继拓展覆盖，实现邮轮高速网联服务，完成低轨与中高轨卫星协同支撑海事通信的阶段性验证。</li>
-        </ul>
+        <section class="section">
+            <h2>Getting Started</h2>
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>StarPerf Simulator (for network environment emulation)</li>
+                <li>FFmpeg Libraries (for video encoding/decoding)</li>
+                <li>Python 3.8+ (for MARL model and framework execution)</li>
+                <li>PyTorch/TensorFlow (for reinforcement learning training)</li>
+            </ul>
+            <h3>Installation</h3>
+            <p>Clone the repository and install dependencies:</p>
+            <pre style="background: #f8f9fa; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+git clone https://SatLive.github.io.git
+cd SatLive
+pip install -r requirements.txt</pre>
+            <h3>Configuration</h3>
+            <p>Refer to the <code>config.yaml</code> file to adjust network parameters (satellite orbit, link characteristics) and video settings (resolution, bitrate, GOP size).</p>
+            <h3>Deployment</h3>
+            <p>Run the main execution script to start the framework:</p>
+            <pre style="background: #f8f9fa; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+python satlive_main.py --config config.yaml</pre>
+        </section>
 
-        <h2>二、MEO与LEO卫星通信协同其他实践案例</h2>
-        <h3>1. SpaceLink公司MEO中继网络（前身Audacy）</h3>
-        <p>2018年Audacy提出用3颗MEO卫星为LEO卫星提供数据中继服务并获FCC频率许可，2020年重组为SpaceLink后持续推进；其MEO中继系统通过光学/射频链路实现LEO卫星数据即时转发，大幅提升传输连续性和效率。</p >
+        <section class="section">
+            <h2>Contributing</h2>
+            <p>We welcome contributions from the community! To contribute:</p>
+            <ol>
+                <li>Fork the repository from <a href="https://SatLive.github.io" target="_blank">https://SatLive.github.io</a></li>
+                <li>Create a feature branch (<code>git checkout -b feature/your-feature</code>)</li>
+                <li>Commit your changes (<code>git commit -m "Add your feature"</code>)</li>
+                <li>Push to the branch (<code>git push origin feature/your-feature</code>)</li>
+                <li>Submit a pull request with detailed description of changes</li>
+            </ol>
+            <p>Please follow our contribution guidelines for code style and testing requirements.</p>
+        </section>
 
-        <h3>2. SES公司跨星座协同</h3>
-        <p>SES（运营GEO/MEO卫星的国际通信巨头）与星链、OneWeb等LEO星座合作，打造多轨道无缝通信网络：MEO卫星凭借“少量卫星覆盖全球”优势，分担LEO星座通信压力，通过星间链路实现LEO卫星数据中继与调度，提升网络覆盖稳定性和通信容量。</p >
+        <section class="section">
+            <h2>License</h2>
+            <p>SatLive is released under the Apache 2.0 License. See the <code>LICENSE</code> file in the repository for full details.</p>
+        </section>
 
-        <h3>3. 中国天地一体化信息网络探索</h3>
-        <p>我国“天地一体化信息网络”规划中，MEO卫星作为天基骨干网核心节点，辅助LEO卫星数据中继与管理：分担路由表计算压力，通过星间链路实现LEO数据高效传输，支撑航空航天、遥感观测等领域通信需求。</p >
+        <section class="section">
+            <h2>Community</h2>
+            <p>Join our community to connect with other users and contributors:</p>
+            <ul>
+                <li>Community Forums: <a href="#">SatLive Discussion Board</a></li>
+                <li>Chat Room: <a href="#">SatLive Slack Workspace</a></li>
+                <li>Paper Citation: Refer to the WWW'26 conference paper for academic use</li>
+            </ul>
+        </section>
 
-        <h3>4. 中国NTN制式协同试验（2025）</h3>
-        <p>中国电信研究院等依托“智慧天网01星”（2万公里中轨卫星）完成NTN制式在轨验证，后续可与LEO星座协同：MEO保障大范围基础通信链路，LEO聚焦低时延高速传输，支撑极地科考、远洋通信等无地面网络场景。</p >
-
-        <h2>三、核心技术术语英译</h2>
-        <p><span class="tech-term">强化学习路由算法</span>：<span class="highlight">Reinforcement Learning Routing Algorithm</span>（缩写：RL Routing Algorithm）</p >
-        <ul>
-            <li>补充：若强调“基于强化学习的”，可表述为 Reinforcement Learning-based Routing Algorithm（适用于学术标题/摘要）；</li>
-            <li>应用示例：This paper proposes an RL Routing Algorithm for satellite networks.（本文提出一种面向卫星网络的强化学习路由算法）。</li>
-        </ul>
-
-        <footer>
-            内容整理：卫星通信协同案例及技术术语 | 2025
+        <footer class="footer">
+            <p>&copy; 2026 SatLive Team. All rights reserved.</p>
+            <p>WWW'26 Paper: "SatLive: Toward End-to-End Live Video Streaming over Integrated Satellite-Terrestrial Networks"</p>
         </footer>
     </div>
 </body>
